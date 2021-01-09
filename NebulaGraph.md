@@ -61,7 +61,6 @@ sudo vim etc/nebula-storaged.conf
 
 sudo vim etc/nebula-graphd.conf
 
---local_ip=0.0.0.0
 --enable_authorize=true
 ```
 
