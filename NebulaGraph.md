@@ -90,5 +90,5 @@ sudo /usr/local/nebula/bin/nebula -u root -p nebula --addr=127.0.0.1 --port=3699
 
 ```
 cd /data/nebula_data/nebula
-/usr/local/nebula/bin/db_dump --space=nba --mode=stat --tags=player
+/usr/local/nebula/bin/db_dump --space=myspace --mode=stat
 ```
