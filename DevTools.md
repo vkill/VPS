@@ -26,18 +26,3 @@ git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
 ```
-
-### Other
-
-```
-sudo apt install -y tig
-sudo yum install -y tig
-```
-
-```
-sudo apt install -y ripgrep
-```
-
-```
-sudo apt install -y tree
-```
