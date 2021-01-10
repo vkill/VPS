@@ -38,3 +38,6 @@ sudo yum install -y tig
 sudo apt install -y ripgrep
 ```
 
+```
+sudo apt install -y tree
+```
