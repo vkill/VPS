@@ -75,3 +75,9 @@ maxmemory 32212254720
 io-threads 1
 ```
 
+```
+The error "OOM command not allowed when used memory > 'maxmemory'"
+# config set maxmemory-policy volatile-ttl
+maxmemory-policy volatile-ttl
+```
+
