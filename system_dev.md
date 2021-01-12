@@ -6,6 +6,9 @@
 sudo apt install -y apt-file
 sudo apt-file update
 apt-file list curl
+
+sudo yum install -y yum-utils
+repoquery -l curl
 ```
 
 ### ripgrep
