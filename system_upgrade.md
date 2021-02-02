@@ -11,7 +11,7 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt dist-upgrade
 sync
-sudo reboot
+sudo shutdown -r now
 ```
 
 ```
