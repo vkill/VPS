@@ -10,8 +10,7 @@ cat /etc/lsb-release
 sudo apt update
 sudo apt upgrade -y
 sudo apt dist-upgrade
-sync
-sudo shutdown -r now
+sync && sync && sudo shutdown -r now
 ```
 
 ```
@@ -46,9 +45,7 @@ sudo apt purge linux-image-unsigned-x.x.x-x-generic
 
 sudo update-grub
 
-sync && sync
-
-sudo shutdown -r now
+sync && sync && sudo shutdown -r now
 ```
 
 ```
@@ -67,9 +64,7 @@ sudo apt purge linux-image-unsigned-5.10.4-051004-generic
 
 sudo update-grub
 
-sync && sync
-
-sudo shutdown -r now
+sync && sync && sudo shutdown -r now
 ```
 
 ```
