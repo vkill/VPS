@@ -115,6 +115,14 @@ sudo vim /etc/systemd/system/multi-user.target.wants/nginx.service
 [Service]
 LimitNOFILE=20480
 LimitNPROC=20480
+
+# OR
+
+sudo mkdir /etc/systemd/system/nginx.service.d
+sudo vim /etc/systemd/system/nginx.service.d/limit.conf
+[Service]
+LimitNOFILE=20480
+LimitNPROC=20480
 ```
 
 ```
