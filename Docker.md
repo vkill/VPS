@@ -44,7 +44,6 @@ sudo rsync -aqxP /var/lib/docker/ /data/docker
 sudo rm -rf /var/lib/docker
 sudo ln -sf /data/docker /var/lib/docker
 
-sudo systemctl daemon-reload
 sudo systemctl start docker
 ps aux | grep -i '[d]ocker'
 ```
