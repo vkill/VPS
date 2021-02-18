@@ -38,8 +38,6 @@ https://linuxconfig.org/how-to-move-docker-s-default-var-lib-docker-to-another-d
 sudo systemctl stop docker
 ps aux | grep -i '[d]ocker'
 
-sudo sed -i 's!ExecStart=/usr/bin/dockerd -H fd://!ExecStart=/usr/bin/dockerd -g /data/docker -H fd://!' /lib/systemd/system/docker.service
-
 sudo mkdir /data/docker
 sudo rsync -aqxP /var/lib/docker/ /data/docker
 
