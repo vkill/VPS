@@ -66,6 +66,9 @@ sudo chmod g+s "/var/log/redis-${instance_name}"
 sudo mkdir "/var/lib/redis-${instance_name}"
 sudo chown redis:redis "/var/lib/redis-${instance_name}"
 sudo chmod 750 "/var/lib/redis-${instance_name}"
+
+sudo cp /etc/logrotate.d/redis-server "/etc/logrotate.d/redis-server-${instance_name}"
+sudo sed -i "s@/var/log/redis@/var/log/redis-${instance_name}@" "/etc/logrotate.d/redis-server-${instance_name}"
 ```
 
 ```
