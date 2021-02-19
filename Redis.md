@@ -43,6 +43,35 @@ sudo systemctl restart redis-server
 redis-cli -h 127.0.0.1 -p 6379 -n 0
 ```
 
+### Server multiple instances
+
+```
+sudo cp /lib/systemd/system/redis-server.service /lib/systemd/system/redis-server@.service
+
+sudo sed -i 's!/etc/redis!/etc/redis-%i!; s!/var/lib/redis!/var/lib/redis-%i!; s!/var/log/redis!/var/log/redis-%i!; s!/var/run/redis!/var/run/redis-%i!; s!^RuntimeDirectory=redis!RuntimeDirectory=redis-%i!' /lib/systemd/system/redis-server@.service
+```
+
+```
+instance_name=second
+instance_port=6380
+
+sudo cp -rp /etc/redis "/etc/redis-${instance_name}"
+sudo sed -i "s@^port 6379@port ${instance_port}@; s@/etc/redis@/etc/redis-${instance_name}@; s@/var/lib/redis@/var/lib/redis-${instance_name}@; s@/var/log/redis@/var/log/redis-${instance_name}@; s@/var/run/redis@/var/run/redis-${instance_name}@" "/etc/redis-${instance_name}/redis.conf"
+
+sudo mkdir "/var/log/redis-${instance_name}"
+sudo chown redis:adm "/var/log/redis-${instance_name}"
+sudo chmod 750 "/var/log/redis-${instance_name}"
+sudo chmod g+s "/var/log/redis-${instance_name}"
+
+sudo mkdir "/var/lib/redis-${instance_name}"
+sudo chown redis:redis "/var/lib/redis-${instance_name}"
+sudo chmod 750 "/var/lib/redis-${instance_name}"
+```
+
+```
+sudo systemctl enable redis-server@second
+```
+
 ### Server database dir move
 
 ```
