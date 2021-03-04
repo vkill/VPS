@@ -61,7 +61,6 @@ sudo ln -sf /media/sdb/repos /
 sudo mkdir /repos
 
 sudo chown $USER /repos
-mkdir /repos/run
 ```
 
 ### Time zone
