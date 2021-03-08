@@ -18,3 +18,7 @@ source ~/.zshrc
 
 swift --version
 ```
+
+```
+sudo apt install -y pkg-config libssl-dev
+```
