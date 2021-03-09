@@ -47,3 +47,9 @@ sudo ln -sf /data/docker /var/lib/docker
 sudo systemctl start docker
 ps aux | grep -i '[d]ocker'
 ```
+
+### Tips
+
+```
+sudo docker system prune -a
+```
