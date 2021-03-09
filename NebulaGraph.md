@@ -49,7 +49,7 @@ sudo netstat -tunlp | grep nebula
 ```
 
 ```
-/usr/local/nebula/bin/db_dump --space_name=myspace --mode=stat -db_path=/data/nebula_data --meta_server=127.0.0.1:9559
+/usr/local/nebula/bin/db_dump --space_name=myspace --mode=stat --db_path=/data/nebula_data --meta_server=127.0.0.1:9559
 ```
 
 ### Install v1
@@ -141,6 +141,5 @@ sudo /usr/local/nebula/bin/nebula -u root -p nebula --addr=127.0.0.1 --port=3699
 ```
 
 ```
-cd /data/nebula_data/nebula
-/usr/local/nebula/bin/db_dump --space=myspace --mode=stat
+/usr/local/nebula/bin/db_dump --space=myspace --mode=stat --db_path=/data/nebula_data/nebula/
 ```
