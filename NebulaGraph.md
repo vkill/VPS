@@ -1,6 +1,58 @@
 ## Nebula Graph
 
-### Install
+### Install v2
+
+Ref https://github.com/bk-rs/nebula-rs/wiki/Install-Nebula-Graph-2.x-on-Ubuntu-20.04
+
+```
+wget https://github.com/vesoft-inc/nebula-graph/releases/download/v2.0.0-rc1/nebula-graph-2.0.0-rc1.ubuntu2004.amd64.deb
+
+sudo dpkg -i nebula-graph-2.0.0-rc1.ubuntu2004.amd64.deb
+```
+### Configurate v2
+
+```
+sudo apt install -y bc
+```
+
+```
+sudo mkdir /data/nebula_data
+
+cd /usr/local/nebula
+
+sudo cp etc/nebula-storaged.conf.default etc/nebula-storaged.conf
+sudo cp etc/nebula-metad.conf.production etc/nebula-metad.conf
+sudo cp etc/nebula-graphd.conf.production etc/nebula-graphd.conf
+
+sudo chmod 644 etc/nebula-storaged.conf
+sudo chmod 644 etc/nebula-metad.conf
+sudo chmod 644 etc/nebula-graphd.conf
+
+sudo vim etc/nebula-storaged.conf
+
+--data_path=/data/nebula_data/
+
+sudo vim etc/nebula-metad.conf
+
+--data_path=/data/nebula_data/
+
+
+sudo vim etc/nebula-graphd.conf
+
+--enable_authorize=true
+```
+
+```
+sudo /usr/local/nebula/scripts/nebula.service start all
+
+sudo netstat -tunlp | grep nebula
+```
+
+```
+/usr/local/nebula/bin/db_dump --space_name=myspace --mode=stat -db_path=/data/nebula_data --meta_server=127.0.0.1:9559
+```
+
+### Install v1
 
 Ref https://github.com/bk-rs/nebula-rs/wiki/Build-Nebula-Graph-1.x-on-Ubuntu-20.04
 
@@ -34,7 +86,7 @@ sudo make install db_dump
 cd
 ```
 
-### Configurate
+### Configurate v1
 
 ```
 sudo apt install -y bc
