@@ -22,3 +22,7 @@ cd acme.sh
 cd ~
 rm -rf acme.sh
 ```
+
+```
+AWS_ACCESS_KEY_ID=xxx AWS_SECRET_ACCESS_KEY=xxx /data/acme_sh/acme.sh --home /data/acme_sh --issue -d xxx.com -d '*.xxx.com' --dns dns_aws
+```
