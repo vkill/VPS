@@ -26,7 +26,7 @@ sudo chgrp consul /etc/consul.d
 sudo vim /etc/default/consul
 CONSUL_FLAGS="-dev -ui -bind 127.0.0.1"
 
-sudo vim /usr/lib/systemd/system/consul.service
+sudo vim /lib/systemd/system/consul.service
 [Unit]
 Description=Consul Agent
 Requires=network-online.target
