@@ -31,6 +31,9 @@ listen_addresses = '0.0.0.0'
 sudo vim /etc/postgresql/13/main/pg_hba.conf
 host all all 0.0.0.0/0 md5
 
+sudo vim /etc/postgresql/13/main/conf.d/port.conf
+port = 5432
+
 sudo vim /etc/postgresql/13/main/conf.d/max_connections.conf
 max_connections = 2000
 
