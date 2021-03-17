@@ -22,7 +22,7 @@ sudo chmod 750 /var/lib/promscale
 sudo vim /etc/default/promscale
 PROMSCALE_ARGS=""
 
-sudo vim /usr/lib/systemd/system/promscale.service
+sudo vim /lib/systemd/system/promscale.service
 [Unit]
 Description=Promscale service
 Requires=network-online.target
