@@ -81,6 +81,21 @@ sudo netstat -tunlp | grep nebula
 /usr/local/nebula/bin/db_dump --space_name=myspace --mode=stat --db_path=/data/nebula_data/nebula --meta_server=127.0.0.1:9559
 ```
 
+### Tips v2
+
+Reset
+
+```
+sudo /usr/local/nebula/scripts/nebula.service stop all
+
+cd /usr/local/nebula
+sudo rm -rf cluster.id
+sudo rm -rf /data/nebula_data/nebula
+sudo rm -rf data
+sudo rm -rf logs
+sudo rm -rf pids
+```
+
 ### Build v1
 
 Ref https://github.com/bk-rs/nebula-rs/wiki/Build-Nebula-Graph-1.x-on-Ubuntu-20.04
