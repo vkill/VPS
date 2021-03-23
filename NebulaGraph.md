@@ -64,6 +64,8 @@ sudo netstat -tunlp | grep nebula
 
 > CREATE SPACE myspace(partition_num=3, replica_factor=1);
 
+> :sleep 3
+
 > GRANT ROLE DBA ON myspace TO myuser;
 ```
 
