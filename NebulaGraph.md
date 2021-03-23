@@ -83,9 +83,9 @@ sudo netstat -tunlp | grep nebula
 
 ### Tips v2
 
-Reset
-
 ```
+# Reset
+
 sudo /usr/local/nebula/scripts/nebula.service stop all
 
 cd /usr/local/nebula
@@ -94,6 +94,19 @@ sudo rm -rf /data/nebula_data/nebula
 sudo rm -rf data
 sudo rm -rf logs
 sudo rm -rf pids
+```
+
+```
+# Load nba dataset
+# Ref https://github.com/vesoft-inc/nebula-console#load-nba-dataset
+
+cd /tmp
+mkdir data
+wget https://raw.githubusercontent.com/vesoft-inc/nebula-console/master/data/nba.ngql
+mv nba.ngql data
+
+/usr/local/bin/nebula-console -u root -p nebula --addr=127.0.0.1 --port=9669
+> :play nba
 ```
 
 ### Build v1
