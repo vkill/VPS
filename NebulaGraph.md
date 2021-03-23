@@ -19,6 +19,8 @@ sudo chmod +x /usr/local/bin/nebula-console
 
 ### Configurate v2
 
+Ref https://github.com/bk-rs/nebula-rs/wiki/Configurate-Nebula-Graph-2.x
+
 ```
 sudo apt install -y bc
 ```
