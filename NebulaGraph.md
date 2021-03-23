@@ -14,7 +14,7 @@ sudo dpkg -i nebula-graph-2.0.0-rc1.ubuntu2004.amd64.deb
 wget https://github.com/vesoft-inc/nebula-console/releases/download/v2.0.0-ga/nebula-console-linux-amd64-v2.0.0-ga
 
 sudo mv nebula-console-linux-amd64-v2.0.0-ga /usr/local/bin/nebula-console
-chmod +x /usr/local/bin/nebula-console
+sudo chmod +x /usr/local/bin/nebula-console
 ```
 
 ### Configurate v2
