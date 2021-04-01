@@ -25,17 +25,17 @@ ssh -A root@x.x.x.x
 
 pacman -Syu
 
-useradd -m archlinux
+useradd -m arch
 
-passwd archlinux
+passwd arch
 
-echo '%archlinux ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+echo '%arch ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
-su - archlinux
+su - arch
 ```
 
 ```
-# as archlinux
+# as arch
 
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
