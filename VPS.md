@@ -43,5 +43,5 @@ chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 
-vim ~/.ssh/authorized_keys
+sudo test -f /root/.ssh/authorized_keys && (sudo cat /root/.ssh/authorized_keys | tee -a ~/.ssh/authorized_keys)
 ```
