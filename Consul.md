@@ -24,7 +24,7 @@ sudo mkdir /etc/consul.d
 sudo chgrp consul /etc/consul.d
 
 sudo vim /etc/default/consul
-CONSUL_FLAGS="-dev -ui -bind 127.0.0.1"
+CONSUL_FLAGS="-dev -ui -bind 127.0.0.1 -log-level err -data-dir /var/lib/consul"
 
 sudo vim /lib/systemd/system/consul.service
 [Unit]
