@@ -5,7 +5,7 @@
 Ref https://github.com/timescale/promscale/blob/master/docs/binary.md
 
 ```
-curl -L -o promscale https://github.com/timescale/promscale/releases/download/0.2.1/promscale_0.2.1_Linux_x86_64
+curl -L -o promscale https://github.com/timescale/promscale/releases/download/0.3.0/promscale_0.3.0_Linux_x86_64
 
 sudo mv promscale /usr/local/bin/
 
@@ -43,11 +43,11 @@ WantedBy=multi-user.target
 
 ### Configure
 
-Require install TimescaleDB 2 with PostgreSQL 12
+Require install TimescaleDB 2 with PostgreSQL 13 / PostgreSQL 12
 
 ```
 sudo su - postgres
-psql -p 5433
+psql -p 5432
 
 postgres=# create database promscale_timescale;
 postgres=# create user promscale with encrypted password 'xxx';
@@ -61,14 +61,14 @@ promscale_timescale=# CREATE EXTENSION IF NOT EXISTS timescaledb;
 ```
 
 ```
-psql -h 127.0.0.1 -p 5433 -U promscale promscale_timescale
+psql -h 127.0.0.1 -p 5432 -U promscale promscale_timescale
 
 promscale_timescale=> \dx
 ```
 
 ```
 sudo vim /etc/default/promscale
-PROMSCALE_ARGS="-db-host=127.0.0.1 -db-port=5433 -db-user=promscale -db-password=xxx -db-name=promscale_timescale"
+PROMSCALE_ARGS="-db-host=127.0.0.1 -db-port=5432 -db-user=promscale -db-password=xxx -db-name=promscale_timescale"
 
 sudo systemctl start promscale.service 
 ```
