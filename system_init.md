@@ -69,6 +69,16 @@ sudo chown $USER /repos
 sudo timedatectl set-timezone UTC
 ```
 
+### NTP
+
+```
+sudo apt install -y ntp
+```
+
+```
+sudo systemctl enable ntp
+```
+
 ### Hostname
 
 ```
