@@ -70,5 +70,6 @@ promscale_timescale=> \dx
 sudo vim /etc/default/promscale
 PROMSCALE_ARGS="-db-host=127.0.0.1 -db-port=5432 -db-user=promscale -db-password=xxx -db-name=promscale_timescale"
 
-sudo systemctl start promscale.service 
+sudo systemctl start promscale.service
+sudo systemctl enable promscale.service
 ```
