@@ -1,5 +1,7 @@
 ## System Journald
 
+Ref https://wiki.archlinux.org/title/Systemd/Journal
+
 ### Size limit
 
 ```
