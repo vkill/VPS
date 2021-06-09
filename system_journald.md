@@ -8,6 +8,8 @@ Ref https://wiki.archlinux.org/title/Systemd/Journal
 sudo vim /etc/systemd/journald.conf
 [Journal]
 SystemMaxUse=2G
+
+sudo systemctl restart systemd-journald.service
 ```
 
 ### Clean
