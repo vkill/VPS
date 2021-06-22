@@ -29,6 +29,10 @@ sudo yum remove -y `package-cleanup --leaves`
 ### Mount /media/sdb
 
 ```
+sudo apt install -y xfsprogs
+```
+
+```
 sudo mkfs.xfs /dev/sdb
 # sudo xfs_growfs /dev/sdb
 
