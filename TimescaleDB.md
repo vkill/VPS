@@ -14,6 +14,10 @@ sudo apt update
 
 ```
 sudo apt install -y timescaledb-2-postgresql-13
+
+# Or
+
+sudo apt install -y timescaledb-2-2.3.1-postgresql-13
 ```
 
 ```
