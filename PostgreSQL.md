@@ -67,6 +67,10 @@ sudo pg_createcluster 13 xxx -d /var/lib/postgresql/13/xxx -p 15432
 sudo systemctl start postgresql@13-xxx.service
 ```
 
+```
+sudo pg_dropcluster 13 xxx --stop
+```
+
 ### Server database dir move
 
 ```
