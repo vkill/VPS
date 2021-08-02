@@ -37,7 +37,7 @@ port = 5432
 sudo vim /etc/postgresql/13/main/conf.d/max_connections.conf
 max_connections = 2000
 
-sudo systemctl restart postgresql
+sudo systemctl restart postgresql@13-main
 ```
 
 ```
@@ -53,10 +53,22 @@ postgres=# grant all privileges on database mydb to myuser;
 psql -h 127.0.0.1 -p 5432 -U myuser mydb
 ```
 
+### Server multiple instances
+
+```
+pg_lsclusters
+```
+
+```
+sudo pg_createcluster 13 xxx -d /var/lib/postgresql/13/xxx -p 15432
+
+sudo systemctl start postgresql@13-xxx.service
+```
+
 ### Server database dir move
 
 ```
-sudo systemctl stop postgresql
+sudo systemctl stop postgresql@13-main
 ps aux | grep -i '[p]ostgres'
 
 sudo mkdir /data/postgresql
@@ -65,6 +77,6 @@ sudo rsync -aqxP /var/lib/postgresql/ /data/postgresql
 sudo rm -rf /var/lib/postgresql
 sudo ln -sf /data/postgresql /var/lib/postgresql
 
-sudo systemctl start postgresql
+sudo systemctl start postgresql@13-main
 ps aux | grep -i '[p]ostgres'
 ```
