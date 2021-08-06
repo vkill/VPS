@@ -5,8 +5,8 @@
 Ref https://docs.timescale.com/latest/getting-started/installation/ubuntu/installation-apt-ubuntu
 
 ```
-sudo apt install -y software-properties-common
-sudo add-apt-repository -y ppa:timescale/timescaledb-ppa
+sudo sh -c "echo 'deb https://packagecloud.io/timescale/timescaledb/ubuntu/ `lsb_release -c -s` main' > /etc/apt/sources.list.d/timescaledb.list"
+wget --quiet -O - https://packagecloud.io/timescale/timescaledb/gpgkey | sudo apt-key add -
 sudo apt update
 ```
 
@@ -17,7 +17,7 @@ sudo apt install -y timescaledb-2-postgresql-13
 
 # Or
 
-sudo apt install -y timescaledb-2-2.3.1-postgresql-13
+sudo apt install -y timescaledb-2-2.4.0-postgresql-13
 ```
 
 ```
