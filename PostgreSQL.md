@@ -1,8 +1,10 @@
 ## PostgreSQL
 
-### Install Common
+### Install Common (Ubuntu)
 
 https://wiki.postgresql.org/wiki/Apt
+
+https://www.postgresql.org/download/linux/ubuntu/
 
 ```
 sudo apt install -y curl ca-certificates gnupg
@@ -14,13 +16,13 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 sudo apt update
 ```
 
-### Install Client
+### Install Client (Ubuntu)
 
 ```
 sudo apt install -y postgresql-client-13
 ```
 
-### Install Server
+### Install Server (Ubuntu)
 
 ```
 sudo apt install -y postgresql-13
@@ -53,7 +55,7 @@ postgres=# grant all privileges on database mydb to myuser;
 psql -h 127.0.0.1 -p 5432 -U myuser mydb
 ```
 
-### Server multiple instances
+### Server multiple instances (Ubuntu)
 
 Ref https://www.percona.com/blog/2019/06/24/managing-multiple-postgresql-instances-on-ubuntu-debian/
 
@@ -71,7 +73,7 @@ sudo systemctl start postgresql@13-xxx.service
 sudo pg_dropcluster 13 xxx --stop
 ```
 
-### Server database dir move
+### Server database dir move (Ubuntu)
 
 ```
 sudo systemctl stop postgresql@13-main
@@ -86,3 +88,15 @@ sudo ln -sf /data/postgresql /var/lib/postgresql
 sudo systemctl start postgresql@13-main
 ps aux | grep -i '[p]ostgres'
 ```
+
+### Install (CentOS 7)
+
+https://www.postgresql.org/download/linux/redhat/
+
+```
+sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+sudo yum install -y postgresql13-server
+sudo yum install -y postgresql13-contrib
+```
+
