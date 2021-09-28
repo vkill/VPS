@@ -100,3 +100,54 @@ sudo yum install -y postgresql13-server
 sudo yum install -y postgresql13-contrib
 ```
 
+```
+sudo mkdir /path/pg_xxx
+sudo chown postgres:postgres /path/pg_xxx
+```
+
+```
+sudo su - postgres
+
+/usr/pgsql-13/bin/pg_ctl init -D /path/pg_xxx
+
+mkdir /path/pg_xxx/conf.d
+
+echo "include_dir = 'conf.d'" | tee -a /path/pg_xxx/postgresql.conf
+
+echo "listen_addresses = '0.0.0.0'" | tee -a /path/pg_xxx/conf.d/x.conf
+echo "port = 5441" | tee -a /path/pg_xxx/conf.d/x.conf
+echo "max_connections = 1000" | tee -a /path/pg_xxx/conf.d/x.conf
+
+mv /path/pg_xxx/pg_hba.conf /path/pg_xxx/pg_hba.conf.OG
+touch /path/pg_xxx/pg_hba.conf
+echo 'host all all 0.0.0.0/0 md5' | tee -a /path/pg_xxx/pg_hba.conf
+
+exit
+```
+
+```
+sudo cp /usr/lib/systemd/system/postgresql-13.service /usr/lib/systemd/system/postgresql-13-xxx.service
+
+sudo sed -i 's!Environment=PGDATA=/var/lib/pgsql/13/data/!Environment=PGDATA=/path/pg_xxx/!' /usr/lib/systemd/system/postgresql-13-xxx.service
+
+sudo systemctl start postgresql-13-xxx
+sudo systemctl status postgresql-13-xxx
+
+sudo systemctl enable postgresql-13-xxx
+```
+
+```
+sudo su - postgres
+
+psql -p 5441
+postgres=# create database mydb;
+postgres=# create user myuser with encrypted password 'mypass';
+postgres=# grant all privileges on database mydb to myuser;
+\q
+
+exit
+```
+
+```
+psql -h 127.0.0.1 -p 5441 -U myuser mydb
+```
