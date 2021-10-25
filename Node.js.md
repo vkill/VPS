@@ -20,6 +20,12 @@ nvm install node
 nvm use node
 ```
 
+```
+node -v
+
+npm install -g yarn
+```
+
 ### Install
 
 Ref https://www.ubuntuupdates.org/ppa/node_16.x
