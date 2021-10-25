@@ -30,6 +30,7 @@ sudo yum remove -y `package-cleanup --leaves`
 
 ```
 sudo apt install -y vim htop net-tools sysstat git curl wget nload
+sudo apt install -y gnupg2
 
 sudo yum install -y epel-release
 sudo yum install -y vim htop wget net-tools sysstat git curl wget
