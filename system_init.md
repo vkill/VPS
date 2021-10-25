@@ -26,6 +26,15 @@ sudo yum install -y yum-utils
 sudo yum remove -y `package-cleanup --leaves`
 ```
 
+### Packages
+
+```
+sudo apt install -y vim htop net-tools sysstat git curl wget nload
+
+sudo yum install -y epel-release
+sudo yum install -y vim htop wget net-tools sysstat git curl wget
+```
+
 ### Mount /media/sdb
 
 ```
@@ -120,15 +129,6 @@ net.ipv4.tcp_congestion_control=bbr
 sudo sysctl -p /etc/sysctl.d/91-bbr.conf
 
 sysctl net.ipv4.tcp_congestion_control
-```
-
-### Packages
-
-```
-sudo apt install -y htop net-tools sysstat git curl wget nload
-
-sudo yum install -y epel-release
-sudo yum install -y vim htop wget net-tools sysstat git curl wget
 ```
 
 ### SSHD Port (optional)
