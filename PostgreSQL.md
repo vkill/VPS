@@ -27,17 +27,12 @@ sudo apt install -y postgresql-client-13
 ```
 sudo apt install -y postgresql-13
 
-sudo vim /etc/postgresql/13/main/conf.d/listen_addresses.conf
-listen_addresses = '0.0.0.0'
+echo "listen_addresses = '0.0.0.0'" | sudo tee -a /etc/postgresql/13/main/conf.d/listen_addresses.conf
+echo "port = 5432" | sudo tee -a /etc/postgresql/13/main/conf.d/listen_addresses.conf
+echo "max_connections = 2000" | sudo tee -a /etc/postgresql/13/main/conf.d/listen_addresses.conf
 
 sudo vim /etc/postgresql/13/main/pg_hba.conf
 host all all 0.0.0.0/0 md5
-
-sudo vim /etc/postgresql/13/main/conf.d/port.conf
-port = 5432
-
-sudo vim /etc/postgresql/13/main/conf.d/max_connections.conf
-max_connections = 2000
 
 sudo systemctl restart postgresql@13-main
 ```
