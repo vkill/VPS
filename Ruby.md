@@ -17,4 +17,6 @@ source ~/.rvm/scripts/rvm
 
 ```
 rvm install 3.0.2
+
+rvm use 3.0.2 --default
 ```
