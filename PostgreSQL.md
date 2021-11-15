@@ -32,7 +32,7 @@ echo "port = 5432" | sudo tee -a /etc/postgresql/14/main/conf.d/listen_addresses
 echo "max_connections = 2000" | sudo tee -a /etc/postgresql/14/main/conf.d/listen_addresses.conf
 
 sudo vim /etc/postgresql/14/main/pg_hba.conf
-host all all 0.0.0.0/0 md5
+host all all 0.0.0.0/0 scram-sha-256
 
 sudo systemctl restart postgresql@14-main
 ```
