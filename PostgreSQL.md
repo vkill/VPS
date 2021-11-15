@@ -27,9 +27,9 @@ sudo apt install -y postgresql-client-14
 ```
 sudo apt install -y postgresql-14
 
-echo "listen_addresses = '0.0.0.0'" | sudo tee -a /etc/postgresql/14/main/conf.d/listen_addresses.conf
-echo "port = 5432" | sudo tee -a /etc/postgresql/14/main/conf.d/listen_addresses.conf
-echo "max_connections = 2000" | sudo tee -a /etc/postgresql/14/main/conf.d/listen_addresses.conf
+echo "listen_addresses = '0.0.0.0'" | sudo tee -a /etc/postgresql/14/main/conf.d/x.conf
+echo "port = 5432" | sudo tee -a /etc/postgresql/14/main/conf.d/x.conf
+echo "max_connections = 2000" | sudo tee -a /etc/postgresql/14/main/conf.d/x.conf
 
 sudo vim /etc/postgresql/14/main/pg_hba.conf
 host all all 0.0.0.0/0 scram-sha-256
