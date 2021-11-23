@@ -42,9 +42,9 @@ sudo mkdir -p /usr/local/openresty/nginx/conf/stream_servers
 
 sudo mkdir -p /usr/local/openresty/nginx/conf/certs
 
-sudo mkdir -p /media/data1/openresty/cache
-sudo chown nobody /media/data1/openresty/cache
-sudo chmod 700 /media/data1/openresty/cache
+sudo mkdir -p /media/data1/openresty_cache
+sudo chown nobody /media/data1/openresty_cache
+sudo chmod 700 /media/data1/openresty_cache
 
 sudo mv /usr/local/openresty/nginx/conf/nginx.conf /usr/local/openresty/nginx/conf/nginx.conf.OG
 
