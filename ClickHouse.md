@@ -85,11 +85,11 @@ psql -h 127.0.0.1 -p 9005 -U default
 sudo systemctl stop clickhouse-server
 ps aux | grep -i '[c]lickhouse-server'
 
-sudo mkdir /data/clickhouse
-sudo rsync -aqxP /var/lib/clickhouse/ /data/clickhouse
+sudo mkdir /media/data1/clickhouse
+sudo rsync -aqxP /var/lib/clickhouse/ /media/data1/clickhouse
 
 sudo rm -rf /var/lib/clickhouse
-sudo ln -sf /data/clickhouse /var/lib/clickhouse
+sudo ln -sf /media/data1/clickhouse /var/lib/clickhouse
 
 sudo systemctl start clickhouse-server
 ps aux | grep -i '[c]lickhouse-server'

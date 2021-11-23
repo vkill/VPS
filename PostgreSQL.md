@@ -74,11 +74,11 @@ sudo pg_dropcluster 14 xxx --stop
 sudo systemctl stop postgresql@14-main
 ps aux | grep -i '[p]ostgres'
 
-sudo mkdir /data/postgresql
-sudo rsync -aqxP /var/lib/postgresql/ /data/postgresql
+sudo mkdir /media/data1/postgresql
+sudo rsync -aqxP /var/lib/postgresql/ /media/data1/postgresql
 
 sudo rm -rf /var/lib/postgresql
-sudo ln -sf /data/postgresql /var/lib/postgresql
+sudo ln -sf /media/data1/postgresql /var/lib/postgresql
 
 sudo systemctl start postgresql@14-main
 ps aux | grep -i '[p]ostgres'

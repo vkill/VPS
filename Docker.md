@@ -38,11 +38,11 @@ https://linuxconfig.org/how-to-move-docker-s-default-var-lib-docker-to-another-d
 sudo systemctl stop docker
 ps aux | grep -i '[d]ocker'
 
-sudo mkdir /data/docker
-sudo rsync -aqxP /var/lib/docker/ /data/docker
+sudo mkdir /media/data1/docker
+sudo rsync -aqxP /var/lib/docker/ /media/data1/docker
 
 sudo rm -rf /var/lib/docker
-sudo ln -sf /data/docker /var/lib/docker
+sudo ln -sf /media/data1/docker /var/lib/docker
 
 sudo systemctl start docker
 ps aux | grep -i '[d]ocker'

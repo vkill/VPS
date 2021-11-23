@@ -36,45 +36,30 @@ sudo yum install -y epel-release
 sudo yum install -y vim htop wget net-tools sysstat git curl wget
 ```
 
-### Mount /media/sdb
+### Mount /media/nvme1n1
 
 ```
 sudo apt install -y xfsprogs
 ```
 
 ```
-sudo mkfs.xfs /dev/sdb
-# sudo xfs_growfs /dev/sdb
+sudo mkfs.xfs /dev/nvme1n1
+# sudo xfs_growfs /dev/nvme1n1
 
-sudo mkdir /media/sdb
-sudo mount /dev/sdb /media/sdb
+sudo mkdir /media/data1
+sudo mount /dev/nvme1n1 /media/data1
 
 sudo ls -l /dev/disk/by-uuid/
 
 sudo vim /etc/fstab
-UUID=xxxxxx /media/sdb auto defaults 0 0
+UUID=xxxxxx /media/data1 auto defaults 0 0
 ```
 
-### Dirs
+### Dirs for repos
 
 ```
-sudo mkdir /media/sdb/data
-sudo ln -sf /media/sdb/data /
-#
-# OR
-#
-sudo mkdir /data
-```
-
-```
-sudo mkdir /media/sdb/repos
-sudo ln -sf /media/sdb/repos /
-#
-# OR
-#
-sudo mkdir /repos
-
-sudo chown $USER /repos
+sudo mkdir /media/data1/repos
+sudo chown $USER /media/data1/repos
 ```
 
 ### Time zone

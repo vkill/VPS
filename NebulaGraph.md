@@ -26,7 +26,7 @@ sudo apt install -y bc
 ```
 
 ```
-sudo mkdir -p /data/nebula_data
+sudo mkdir -p /media/data1/nebula_data
 
 cd /usr/local/nebula
 
@@ -40,11 +40,11 @@ sudo chmod 644 etc/nebula-graphd.conf
 
 sudo vim etc/nebula-storaged.conf
 
---data_path=/data/nebula_data/
+--data_path=/media/data1/nebula_data/
 
 sudo vim etc/nebula-metad.conf
 
---data_path=/data/nebula_data/
+--data_path=/media/data1/nebula_data/
 
 sudo vim etc/nebula-graphd.conf
 
@@ -78,7 +78,7 @@ sudo netstat -tunlp | grep nebula
 ```
 
 ```
-/usr/local/nebula/bin/db_dump --space_name=myspace --mode=stat --db_path=/data/nebula_data/nebula --meta_server=127.0.0.1:9559
+/usr/local/nebula/bin/db_dump --space_name=myspace --mode=stat --db_path=/media/data1/nebula_data/nebula --meta_server=127.0.0.1:9559
 ```
 
 ### Tips v2
@@ -90,7 +90,7 @@ sudo /usr/local/nebula/scripts/nebula.service stop all
 
 cd /usr/local/nebula
 sudo rm -rf cluster.id
-sudo rm -rf /data/nebula_data/nebula
+sudo rm -rf /media/data1/nebula_data/nebula
 sudo rm -rf data
 sudo rm -rf logs
 sudo rm -rf pids

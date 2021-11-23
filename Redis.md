@@ -81,11 +81,11 @@ sudo systemctl enable redis-server@second
 sudo systemctl stop redis-server
 ps aux | grep -i '[r]edis-server'
 
-sudo mkdir /data/redis
-sudo rsync -aqxP /var/lib/redis/ /data/redis
+sudo mkdir /media/data1/redis
+sudo rsync -aqxP /var/lib/redis/ /media/data1/redis
 
 sudo rm -rf /var/lib/redis
-sudo ln -sf /data/redis /var/lib/redis
+sudo ln -sf /media/data1/redis /var/lib/redis
 
 sudo systemctl start redis-server
 ps aux | grep -i '[r]edis-server'
