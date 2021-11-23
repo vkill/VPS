@@ -43,6 +43,9 @@ psql
 postgres=# create database mydb;
 postgres=# create user myuser with encrypted password 'mypass';
 postgres=# grant all privileges on database mydb to myuser;
+postgres=# \q
+
+exit
 ```
 
 ```
@@ -137,7 +140,7 @@ psql -p 5441
 postgres=# create database mydb;
 postgres=# create user myuser with encrypted password 'mypass';
 postgres=# grant all privileges on database mydb to myuser;
-\q
+postgres=# \q
 
 exit
 ```
