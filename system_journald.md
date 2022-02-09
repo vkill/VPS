@@ -12,6 +12,16 @@ SystemMaxUse=2G
 sudo systemctl restart systemd-journald.service
 ```
 
+### Forward
+
+```
+sudo vim /etc/systemd/journald.conf
+[Journal]
+ForwardToSyslog=no
+
+sudo systemctl restart systemd-journald.service
+```
+
 ### Clean
 
 ```
