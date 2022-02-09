@@ -128,6 +128,8 @@ Port 1022
 
 Ref https://wiki.archlinux.org/index.php/swap
 
+Note: xfs filesystem don't support swap file
+
 ```
 # General
 sudo fallocate -l 4G /swapfile
