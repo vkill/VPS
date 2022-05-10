@@ -27,6 +27,8 @@ sudo systemctl enable redis-server
 ```
 
 ```
+sudo mkdir /etc/redis/modules
+
 sudo vim /etc/redis/redis.conf
 aclfile /etc/redis/users.acl
 
@@ -89,6 +91,25 @@ sudo ln -sf /media/data1/redis /var/lib/redis
 
 sudo systemctl start redis-server
 ps aux | grep -i '[r]edis-server'
+```
+
+### Module redis-cell
+
+Ref https://github.com/brandur/redis-cell#install
+
+```
+cd /usr/local/src
+
+git clone https://github.com/brandur/redis-cell.git
+cd redis-cell
+cargo build --release -j 1
+cp target/release/libredis_cell.so /etc/redis/modules
+```
+
+```
+sudo vim /etc/redis/redis.conf
+loadmodule /etc/redis/modules/libredis_cell.so
+sudo systemctl restart redis-server
 ```
 
 ### Tips for /etc/redis/redis.conf
