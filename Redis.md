@@ -7,7 +7,6 @@ Ref https://redis.io/download#from-the-official-ubuntu-ppa
 ```
 sudo apt install -y software-properties-common
 sudo add-apt-repository -y ppa:redislabs/redis
-sudo apt update
 ```
 
 ### Install Client
