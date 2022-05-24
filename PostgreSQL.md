@@ -148,3 +148,11 @@ exit
 ```
 psql -h 127.0.0.1 -p 5441 -U myuser mydb
 ```
+
+### Stats
+
+https://www.postgresql.org/docs/current/monitoring-stats.html
+
+```
+SELECT datname, numbackends FROM pg_stat_database;
+```
