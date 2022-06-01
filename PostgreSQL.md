@@ -156,3 +156,11 @@ https://www.postgresql.org/docs/current/monitoring-stats.html
 ```
 SELECT datname, numbackends FROM pg_stat_database;
 ```
+
+### Tips
+
+* Count_estimate
+
+https://wiki.postgresql.org/wiki/Count_estimate
+
+
