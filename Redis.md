@@ -102,12 +102,87 @@ cd /usr/local/src
 git clone https://github.com/brandur/redis-cell.git
 cd redis-cell
 cargo build --release -j 1
-cp target/release/libredis_cell.so /etc/redis/modules
+sudo cp target/release/libredis_cell.so /etc/redis/modules
 ```
 
 ```
 sudo vim /etc/redis/redis.conf
 loadmodule /etc/redis/modules/libredis_cell.so
+sudo systemctl restart redis-server
+```
+
+### Module RedisJSON
+
+Ref https://github.com/RedisJSON/RedisJSON#build
+
+```
+sudo apt install -y libclang-dev
+```
+
+```
+cd /usr/local/src
+
+git clone --recursive https://github.com/RedisJSON/RedisJSON.git
+cd RedisJSON
+cargo build --release -j 1
+sudo cp target/release/librejson.so /etc/redis/modules
+```
+
+```
+sudo vim /etc/redis/redis.conf
+loadmodule /etc/redis/modules/librejson.so
+sudo systemctl restart redis-server
+```
+
+### Module RediSearch
+
+Ref https://redis.io/docs/stack/search/quick_start/#build-from-source
+
+Require python3
+
+```
+sudo apt install -y make
+```
+
+```
+cd /usr/local/src
+
+git clone --recursive https://github.com/RediSearch/RediSearch.git
+cd RediSearch
+sudo make setup
+make build
+sudo cp bin/linux-x64-release/search/redisearch.so /etc/redis/modules
+```
+
+```
+sudo vim /etc/redis/redis.conf
+loadmodule /etc/redis/modules/redisearch.so
+sudo systemctl restart redis-server
+```
+
+### Module RedisTimeSeries
+
+Ref https://redis.io/docs/stack/timeseries/quickstart/#build-and-run-it-yourself
+
+Require python3
+
+```
+sudo apt install -y make
+```
+
+```
+cd /usr/local/src
+
+git clone --recursive https://github.com/RedisTimeSeries/RedisTimeSeries.git
+cd RedisTimeSeries
+sudo make setup
+make build
+sudo cp bin/linux-x64-release/redistimeseries.so /etc/redis/modules
+```
+
+```
+sudo vim /etc/redis/redis.conf
+loadmodule /etc/redis/modules/redistimeseries.so
 sudo systemctl restart redis-server
 ```
 
