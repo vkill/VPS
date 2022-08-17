@@ -25,7 +25,11 @@ conda info -e
 conda create -n xx python
 conda activate xx
 
+conda create --name yy --copy --clone xx
+conda activate yy
+
 conda activate base
+conda remove -n yy --all
 conda remove -n xx --all
 
 conda deactivate
