@@ -7,8 +7,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 ```
-sudo apt install -y gcc
-sudo apt install -y pkg-config libssl-dev
+sudo apt install -y gcc pkg-config libssl-dev
 
 sudo yum install -y openssl-devel
 ```
