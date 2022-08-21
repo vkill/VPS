@@ -97,6 +97,10 @@ ps aux | grep -i '[r]edis-server'
 Ref https://github.com/brandur/redis-cell#install
 
 ```
+sudo apt install -y gcc pkg-config libssl-dev
+```
+
+```
 cd /usr/local/src
 
 git clone https://github.com/brandur/redis-cell.git
@@ -116,7 +120,7 @@ sudo systemctl restart redis-server
 Ref https://github.com/RedisJSON/RedisJSON#build
 
 ```
-sudo apt install -y libclang-dev
+sudo apt install -y gcc pkg-config libssl-dev libclang-dev
 ```
 
 ```
@@ -183,6 +187,30 @@ sudo cp bin/linux-x64-release/redistimeseries.so /etc/redis/modules
 ```
 sudo vim /etc/redis/redis.conf
 loadmodule /etc/redis/modules/redistimeseries.so
+sudo systemctl restart redis-server
+```
+
+### Module RedisGears-2.0
+
+Ref https://github.com/RedisGears/RedisGears#build
+
+```
+sudo apt install -y gcc pkg-config libssl-dev libclang-dev
+```
+
+```
+cd /usr/local/src
+
+git clone https://github.com/RedisGears/RedisGears.git
+cd RedisGears
+cargo build --release -j 1
+sudo cp target/release/libredisgears.so /etc/redis/modules
+sudo cp target/release/libredisgears_v8_plugin.so /etc/redis/modules
+```
+
+```
+sudo vim /etc/redis/redis.conf
+loadmodule /etc/redis/modules/libredisgears.so /etc/redis/modules/libredisgears_v8_plugin.so
 sudo systemctl restart redis-server
 ```
 
