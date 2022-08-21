@@ -195,7 +195,7 @@ sudo systemctl restart redis-server
 Ref https://github.com/RedisGears/RedisGears#build
 
 ```
-sudo apt install -y gcc pkg-config libssl-dev libclang-dev
+sudo apt install -y gcc pkg-config libssl-dev libclang-dev wget make g++
 ```
 
 ```
