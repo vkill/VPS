@@ -32,7 +32,7 @@ vim ~/.cargo/config
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
 
-replace-with = 'rustcc'
+replace-with = 'tuna'
 
 [source.tuna]
 registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
@@ -42,7 +42,4 @@ registry = "git://mirrors.ustc.edu.cn/crates.io-index"
 
 [source.sjtu]
 registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index"
-
-[source.rustcc]
-registry = "git://crates.rustcc.cn/crates.io-index"
 ```
