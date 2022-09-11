@@ -45,3 +45,33 @@ schema_registry:
         - address: "127.0.0.1"
           port: 8081
 ```
+
+## Redpanda Console
+
+### Install
+
+https://docs.redpanda.com/docs/console/installation/
+
+```
+sudo apt install redpanda-console -y
+
+sudo systemctl start redpanda-console
+```
+
+```
+sudo systemctl restart redpanda-console
+
+sudo journalctl -u redpanda-console -f
+
+sudo netstat -tnulp | grep redpanda-c
+```
+
+### Configure
+
+https://docs.redpanda.com/docs/console/reference/config/
+
+```
+sudo vim /etc/redpanda/redpanda-console-config.yaml
+
+
+```
