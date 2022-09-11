@@ -77,5 +77,10 @@ https://docs.redpanda.com/docs/console/reference/config/
 ```
 sudo vim /etc/redpanda/redpanda-console-config.yaml
 
+kafka:
+  brokers: "localhost:9092"
 
+server:
+  listenPort: 18080
+  listenAddress: "0.0.0.0"
 ```
