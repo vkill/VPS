@@ -66,6 +66,10 @@ sudo journalctl -u redpanda-console -f
 sudo netstat -tnulp | grep redpanda-c
 ```
 
+```
+open http://localhost:8080
+```
+
 ### Configure
 
 https://docs.redpanda.com/docs/console/reference/config/
