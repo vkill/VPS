@@ -6,7 +6,7 @@ Ref https://github.com/citusdata/citus#install-citus-locally
 
 ```
 curl https://install.citusdata.com/community/deb.sh | sudo bash
-sudo apt -y install postgresql-14-citus-10.2
+sudo apt -y install postgresql-14-citus-11.1
 ```
 
 ```
