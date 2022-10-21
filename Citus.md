@@ -6,14 +6,14 @@ Ref https://github.com/citusdata/citus#install-citus-locally
 
 ```
 curl https://install.citusdata.com/community/deb.sh | sudo bash
-sudo apt -y install postgresql-14-citus-11.1
+sudo apt -y install postgresql-15-citus-11.1
 ```
 
 ```
-sudo vim /etc/postgresql/14/main/postgresql.conf
+sudo vim /etc/postgresql/15/main/postgresql.conf
 shared_preload_libraries = 'citus'
 
-sudo systemctl restart postgresql@14-main
+sudo systemctl restart postgresql@15-main
 ```
 
 ```
