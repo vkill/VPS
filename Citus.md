@@ -1,11 +1,16 @@
 ## Citus
 
-### Install
+### Install common
 
 Ref https://github.com/citusdata/citus#install-citus-locally
 
 ```
 curl https://install.citusdata.com/community/deb.sh | sudo bash
+```
+
+### Install with PostgreSQL 15
+
+```
 sudo apt -y install postgresql-15-citus-11.1
 ```
 
