@@ -19,21 +19,21 @@ sudo apt update
 ### Install Client (Ubuntu)
 
 ```
-sudo apt install -y postgresql-client-14
+sudo apt install -y postgresql-client-15
 ```
 
 ### Install Server (Ubuntu)
 
 ```
-sudo apt install -y postgresql-14
+sudo apt install -y postgresql-15
 
-echo "listen_addresses = '0.0.0.0'" | sudo tee -a /etc/postgresql/14/main/conf.d/x.conf
-echo "port = 5432" | sudo tee -a /etc/postgresql/14/main/conf.d/x.conf
-echo "max_connections = 2000" | sudo tee -a /etc/postgresql/14/main/conf.d/x.conf
+echo "listen_addresses = '0.0.0.0'" | sudo tee -a /etc/postgresql/15/main/conf.d/x.conf
+echo "port = 5432" | sudo tee -a /etc/postgresql/15/main/conf.d/x.conf
+echo "max_connections = 2000" | sudo tee -a /etc/postgresql/15/main/conf.d/x.conf
 
-echo "host all all 0.0.0.0/0 scram-sha-256" | sudo tee -a /etc/postgresql/14/main/pg_hba.conf
+echo "host all all 0.0.0.0/0 scram-sha-256" | sudo tee -a /etc/postgresql/15/main/pg_hba.conf
 
-sudo systemctl restart postgresql@14-main
+sudo systemctl restart postgresql@15-main
 ```
 
 ```
@@ -61,19 +61,19 @@ pg_lsclusters
 ```
 
 ```
-sudo pg_createcluster 14 xxx -d /var/lib/postgresql/14/xxx -p 15432
+sudo pg_createcluster 15 xxx -d /var/lib/postgresql/15/xxx -p 15432
 
-sudo systemctl start postgresql@14-xxx.service
+sudo systemctl start postgresql@15-xxx.service
 ```
 
 ```
-sudo pg_dropcluster 14 xxx --stop
+sudo pg_dropcluster 15 xxx --stop
 ```
 
 ### Server database dir move (Ubuntu)
 
 ```
-sudo systemctl stop postgresql@14-main
+sudo systemctl stop postgresql@15-main
 ps aux | grep -i '[p]ostgres'
 
 sudo mkdir /media/data1/postgresql
@@ -82,7 +82,7 @@ sudo rsync -aqxP /var/lib/postgresql/ /media/data1/postgresql
 sudo rm -rf /var/lib/postgresql
 sudo ln -sf /media/data1/postgresql /var/lib/postgresql
 
-sudo systemctl start postgresql@14-main
+sudo systemctl start postgresql@15-main
 ps aux | grep -i '[p]ostgres'
 ```
 
