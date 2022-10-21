@@ -27,9 +27,9 @@ sudo apt install -y postgresql-client-15
 ```
 sudo apt install -y postgresql-15
 
-echo "listen_addresses = '0.0.0.0'" | sudo tee -a /etc/postgresql/15/main/conf.d/x.conf
-echo "port = 5432" | sudo tee -a /etc/postgresql/15/main/conf.d/x.conf
-echo "max_connections = 2000" | sudo tee -a /etc/postgresql/15/main/conf.d/x.conf
+sudo sed -i -E "s/^[#]?listen_addresses = .*/listen_addresses = '0.0.0.0'/" /etc/postgresql/15/main/postgresql.conf
+sudo sed -i -E "s/^[#]?port = .*/port = 5432/" /etc/postgresql/15/main/postgresql.conf
+sudo sed -i -E "s/^[#]?max_connections = .*/max_connections = 1000/" /etc/postgresql/15/main/postgresql.conf
 
 echo "host all all 0.0.0.0/0 scram-sha-256" | sudo tee -a /etc/postgresql/15/main/pg_hba.conf
 
