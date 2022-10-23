@@ -53,3 +53,11 @@ ps aux | grep -i '[d]ocker'
 ```
 sudo docker system prune -a
 ```
+
+```
+sudo cat /etc/docker/daemon.json
+{
+    "log-driver": "json-file",
+    "log-opts": {"max-size": "10m", "max-file": "3"}
+}
+```
