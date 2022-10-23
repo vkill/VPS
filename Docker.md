@@ -55,6 +55,8 @@ sudo docker system prune -a
 ```
 
 ```
+sudo sh -c 'truncate -s 0 /var/lib/docker/containers/*/*-json.log'
+
 sudo cat /etc/docker/daemon.json
 {
     "log-driver": "json-file",
