@@ -26,3 +26,7 @@ rm -rf acme.sh
 ```
 AWS_ACCESS_KEY_ID=xxx AWS_SECRET_ACCESS_KEY=xxx /media/data1/acme_sh/acme.sh --home /media/data1/acme_sh --issue -d xxx.com -d '*.xxx.com' --dns dns_aws
 ```
+
+```
+/media/data1/acme_sh/acme.sh --home /media/data1/acme_sh --set-default-ca --server letsencrypt
+```
