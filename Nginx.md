@@ -45,10 +45,6 @@ sudo mkdir -p /etc/nginx/stream_servers
 
 sudo mkdir -p /etc/nginx/certs
 
-sudo mkdir -p /media/data1/nginx_cache
-sudo chown nginx /media/data1/nginx_cache
-sudo chmod 700 /media/data1/nginx_cache
-
 sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.OG
 
 sudo vim /etc/nginx/nginx.conf
@@ -97,12 +93,17 @@ stream {
 
 ```
 vim /etc/nginx/http_servers/xxx.conf
-
 ```
 
 ```
 sudo nginx -t
 sudo systemctl restart nginx
+```
+
+```
+sudo mkdir -p /media/data1/nginx_cache
+sudo chown nginx /media/data1/nginx_cache
+sudo chmod 700 /media/data1/nginx_cache
 ```
 
 ### Tips
