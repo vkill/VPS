@@ -24,6 +24,12 @@ rustup install stable
 rustup default stable
 ```
 
+### Install on Windows
+
+https://www.rust-lang.org/tools/install
+
+Download `rustup-init.exe` and run, select `1) Quick install via the Visual Studio Community installer`
+
 ### Configure source (For CN)
 
 ```
