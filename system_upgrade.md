@@ -1,6 +1,6 @@
 ## System Upgrade
 
-### Ubuntu 16.04 to 18.04 and 18.04 to 20.04
+### Ubuntu
 
 ref https://www.linuxtechi.com/upgrade-ubuntu-18-04-lts-to-ubuntu-20-04-lts/
 
@@ -18,6 +18,7 @@ sudo apt --purge autoremove -y
 sudo apt install update-manager-core -y
 
 # 18.04 -> 20.04
+# 20.04 -> 22.04
 sudo do-release-upgrade -d
 
 # 16.04 -> 18.04
