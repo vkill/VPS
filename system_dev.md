@@ -29,3 +29,12 @@ sudo apt install -y tree
 sudo apt install -y tig
 sudo yum install -y tig
 ```
+
+### Network bandwidth
+
+```
+sudo apt install -y nload iftop
+
+sudo nload eth0
+sudo iftop -i eth0 -P
+```
