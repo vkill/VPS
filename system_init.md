@@ -60,6 +60,8 @@ UUID=xxxxxx /media/data1 auto defaults 0 0
 ```
 sudo mkdir /media/data1/repos
 sudo chown $USER /media/data1/repos
+
+ln -sf /media/data1/repos ~/repos
 ```
 
 ### Time zone
