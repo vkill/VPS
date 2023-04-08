@@ -14,6 +14,8 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62
 sudo apt update
 
 sudo apt install -y nginx
+# Or 
+# sudo apt install -y nginx-full
 sudo apt install -y nginx-module-njs nginx-module-njs-dbg
 ```
 
