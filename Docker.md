@@ -57,11 +57,13 @@ sudo docker system prune -a
 ```
 sudo sh -c 'truncate -s 0 /var/lib/docker/containers/*/*-json.log'
 
-find /var/lib/docker -type f -name '*.log' -size +10M | xargs -I{} truncate -s 0 {}
-
 sudo cat /etc/docker/daemon.json
 {
     "log-driver": "json-file",
     "log-opts": {"max-size": "10m", "max-file": "3"}
 }
+```
+
+```
+find /var/lib/docker -type f -name '*.log' -size +10M | xargs -I{} truncate -s 0 {}
 ```
