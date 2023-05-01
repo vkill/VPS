@@ -21,3 +21,8 @@ Address=192.168.x.x/17
 
 $ sudo systemctl restart systemd-networkd
 ```
+
+### Tips
+
+Create a linode and immediately delete it, costs $0.01 .
+
