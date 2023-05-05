@@ -136,6 +136,11 @@ Note: xfs filesystem don't support swap file
 # General
 sudo fallocate -l 4G /swapfile
 # Centos 7
+# Or 
+# $ sudo swapon /xx/swapfile
+# swapon: /xx/swapfile: swapon failed: Invalid argument
+# $ sudo tail -f /var/log/kern.log
+# swapon: swapfile has holes
 sudo dd if=/dev/zero of=/swapfile count=4096 bs=1MiB
 
 sudo chmod 600 /swapfile
