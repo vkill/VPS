@@ -66,5 +66,5 @@ sudo cat /etc/docker/daemon.json
 
 ```
 find /var/lib/docker -type f -name '*.log' -size +10M | xargs -I{} truncate -s 0 {}
-find /var/lib/docker -type f -name '*.log*.gz' -size +10M | xargs -I{} truncate -s 0 {}
+find /var/lib/docker -type f -name '*.log*.gz' -size +10M | xargs -I{} rm -rf {}
 ```
