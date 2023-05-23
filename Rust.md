@@ -9,7 +9,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 sudo apt install -y gcc pkg-config libssl-dev
 
-sudo yum install -y openssl-devel
+sudo yum install -y gcc openssl-devel
 ```
 
 ```
