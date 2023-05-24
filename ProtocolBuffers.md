@@ -24,3 +24,6 @@ protoc  | grep _out=OUT_DIR
 
 Ref https://github.com/protocolbuffers/protobuf/blob/main/src/README.md
 
+### Tips
+
+Do not use Protobuf 3 in CentOS 7
