@@ -49,3 +49,12 @@ registry = "git://mirrors.ustc.edu.cn/crates.io-index"
 [source.sjtu]
 registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index"
 ```
+
+### rdkafka
+
+```
+# Ubuntu 22.04
+sudo apt install -y librdkafka-dev
+```
+
+But rdkafka 0.31 Requested 'rdkafka >= 1.9.2' but version of librdkafka is 1.8.0
