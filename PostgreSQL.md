@@ -159,6 +159,13 @@ SELECT datname, numbackends FROM pg_stat_database;
 
 ### Tips
 
+```
+sudo mkdir /etc/systemd/system/postgresql@.service.d
+sudo vim /etc/systemd/system/postgresql@.service.d/restart.conf
+[Service]
+Restart=on-failure
+```
+
 * Count_estimate
 
 https://wiki.postgresql.org/wiki/Count_estimate
