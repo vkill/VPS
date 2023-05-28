@@ -1,6 +1,6 @@
 ## Docker
 
-### Docker Install
+### Docker Install (Ubuntu)
 
 https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
 
@@ -14,6 +14,22 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 
 sudo apt-get install -y docker-ce docker-ce-cli
+
+sudo usermod -a -G docker $USER
+
+sudo systemctl restart docker
+```
+
+### Docker Install (CentOS)
+
+https://docs.docker.com/engine/install/centos/#install-using-the-repository
+
+```
+sudo yum install -y yum-utils
+
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 sudo usermod -a -G docker $USER
 
