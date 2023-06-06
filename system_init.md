@@ -34,6 +34,9 @@ sudo apt install -y gnupg2 iputils-ping
 
 sudo yum install -y epel-release
 sudo yum install -y vim htop wget net-tools sysstat git curl wget
+
+sudo dnf install -y epel-release
+sudo dnf install -y htop
 ```
 
 ### Mount /media/nvme1n1
