@@ -36,6 +36,18 @@ sudo usermod -a -G docker $USER
 sudo systemctl restart docker
 ```
 
+### Docker Install (AlmaLinux)
+
+```
+sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo usermod -a -G docker $USER
+
+sudo systemctl restart docker
+```
+
 ### DockerComposer Install
 
 https://github.com/docker/compose/releases
