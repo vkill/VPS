@@ -11,7 +11,7 @@ curl https://install.citusdata.com/community/deb.sh | sudo bash
 ### Install with PostgreSQL 15
 
 ```
-sudo apt -y install postgresql-15-citus-11.1
+sudo apt -y install postgresql-15-citus-11.3
 ```
 
 ```
