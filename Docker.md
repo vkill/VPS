@@ -80,6 +80,8 @@ ps aux | grep -i '[d]ocker'
 
 ```
 sudo docker system prune -a
+
+sudo docker system prune -a --volumes
 ```
 
 ```
