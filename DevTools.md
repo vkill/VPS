@@ -8,6 +8,7 @@ https://github.com/robbyrussell/oh-my-zsh
 sudo apt install -y zsh git
 sudo yum install -y zsh git
 
+# Maybe require `sudo dnf install -y util-linux-user`
 sudo chsh -s /bin/zsh $USER
 
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
