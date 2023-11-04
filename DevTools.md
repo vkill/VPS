@@ -19,6 +19,7 @@ curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools
 https://github.com/tmux/tmux
 
 ```
+sudo pacman -S --noconfirm tmux
 sudo apt install -y tmux
 sudo yum install -y tmux
 
