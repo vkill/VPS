@@ -79,6 +79,8 @@ ps aux | grep -i '[d]ocker'
 ### Tips
 
 ```
+sudo docker system df
+
 sudo docker system prune -a
 
 sudo docker system prune -a --volumes
