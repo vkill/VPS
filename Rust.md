@@ -4,6 +4,11 @@
 
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Or
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/rustup-init.sh
+sh /tmp/rustup-init.sh -y -v --default-toolchain=1.75.0
 ```
 
 ```
