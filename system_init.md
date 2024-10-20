@@ -131,6 +131,8 @@ net.ipv4.ip_forward = 1
 sudo sysctl -p /etc/sysctl.d/91-ip_forward.conf
 
 sysctl net.ipv4.ip_forward
+
+cat /proc/sys/net/ipv4/ip_forward
 ```
 
 ### SSHD Port (optional)
