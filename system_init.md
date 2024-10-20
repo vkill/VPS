@@ -122,6 +122,17 @@ sudo sysctl -p /etc/sysctl.d/91-bbr.conf
 sysctl net.ipv4.tcp_congestion_control
 ```
 
+### IP Forward
+
+```
+sudo vim /etc/sysctl.d/91-ip_forward.conf
+net.ipv4.ip_forward = 1
+
+sudo sysctl -p /etc/sysctl.d/91-ip_forward.conf
+
+sysctl net.ipv4.ip_forward
+```
+
 ### SSHD Port (optional)
 
 ```
